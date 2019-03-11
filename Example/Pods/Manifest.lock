@@ -1,0 +1,23 @@
+PODS:
+  - Jsocket (0.1.1):
+    - YYModel
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - Jsocket (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - YYModel
+
+EXTERNAL SOURCES:
+  Jsocket:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Jsocket: caa2570edbe5f86beb3cf07bb2ad830205d0e166
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 147e467a6b0b093199f40154d87f1aad1b666d45
+
+COCOAPODS: 1.5.3
