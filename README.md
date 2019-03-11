@@ -22,14 +22,18 @@ pod 'Jsocket'
 ## Use
 ```ruby
 Jsocket * socket =[[Jsocket alloc]init];
+```
 OR
+```ruby
+Jsocket * socket= [Jsocket instant];
 
-Jsocket * socket= [Jsocket instant].wsUrl=@"ws://1270.0.0.1:99";
+socket.wsUrl=@"ws://1270.0.0.1:99";
+
 设置webSocket 标识
 socket.log.TAG = @"游戏服务器";
 socket.open();
 
-监听 连接打开
+连接打开回调
 socket.event.ConnectAor(id target, ^(Jsocket *jscoket) {
 
 });
