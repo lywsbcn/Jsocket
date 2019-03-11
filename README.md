@@ -25,8 +25,8 @@ Jsocket * socket =[[Jsocket alloc]init];
 OR
 
 Jsocket * socket= [Jsocket instant].wsUrl=@"ws://1270.0.0.1:99";
-设置webSocket 表示
-socket.log.TAG = @"幼儿园服务器";
+设置webSocket 标识
+socket.log.TAG = @"游戏服务器";
 socket.open();
 
 监听 连接打开
