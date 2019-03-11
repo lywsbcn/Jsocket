@@ -19,6 +19,34 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'Jsocket'
 ```
+## Use
+```ruby
+Jsocket * socket =[[Jsocket alloc]init];
+OR
+
+Jsocket * socket= [Jsocket instant].wsUrl=@"ws://1270.0.0.1:99";
+设置webSocket 表示
+socket.log.TAG = @"幼儿园服务器";
+socket.open();
+
+监听 连接打开
+socket.event.ConnectAor(id target, ^(Jsocket *jscoket) {
+
+});
+
+发送并且回调
+socket.send(self, req, ^(id response, NSInteger flag, NSString *msg, Jsocket *jscoket) {
+
+});
+
+添加监听回调
+socket.event.ListenerAor(id action, id target, ^(id response, NSInteger flag, NSString *msg, Jsocket *jscoket) {
+
+}, BOOL always);
+
+移除监听回调
+socket.event.remove(id target);
+```
 
 ## Author
 
