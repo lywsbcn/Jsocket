@@ -24,7 +24,10 @@ static Jsocket * jsocketManager = nil;
 
 +(instancetype)instant{
     if(!jsocketManager){
-        jsocketManager =[[Jsocket alloc]init];
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            jsocketManager =[[Jsocket alloc]init];
+        });        
     }
     return jsocketManager;
 }
@@ -78,7 +81,7 @@ static Jsocket * jsocketManager = nil;
         _asend =^Jsocket *(id target, id param, JsBlockMsgCallback callback,BOOL always) {
             param = [param yy_modelToJSONObject];
             
-            id action = [param objectForKey:wself.event.Kaction];
+            id action = [param objectForKey:wself.event.Raction];
             
             if(action){
                 wself.event.ListenerAor(action, target, callback, always);

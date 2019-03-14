@@ -23,13 +23,16 @@ typedef void(^blockJseRemove)(id target);
 
 -(instancetype)initWithJsocket:(Jsocket *)js;
 
-/*action key*/
+/*请求 action key*/
+@property(nonatomic,copy)NSString * Raction;
+
+/*回复 action key*/
 @property(nonatomic,copy)NSString * Kaction;
 
-/*flag key*/
+/*回复 flag key*/
 @property(nonatomic,copy)NSString * Kflag;
 
-/*msg key*/
+/*回复 msg key*/
 @property(nonatomic,copy)NSString * Kmsg;
 
 /*连接成功 回调列表*/

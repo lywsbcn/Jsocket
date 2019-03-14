@@ -21,6 +21,7 @@
 //        _js = js;
         __weak typeof(self) wself = self;
         
+        _Raction = @"action";
         _Kaction = @"action";
         _Kflag = @"flag";
         _Kmsg = @"msg";
