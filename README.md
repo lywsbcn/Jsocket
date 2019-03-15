@@ -107,16 +107,18 @@ socket.event.remove(id target);
 在我们的系统中，是根据 `action` 跟服务端约定是什么请求
 比如:
 ```
-发送 {"action"："10000"}
-回复 {"action": "10000" ,"flag":1 , "msg":"ok"}
+登录请求
+  发送 {"action"："10000"}
+  回复 {"action": "10000" ,"flag":1 , "msg":"ok"}
 
-发送 {"action"："10001"}
-回复 {"action": "10001" ,"flag":2 , "msg":"错误"}
+退出登录请求
+  发送 {"action"："10001"}
+  回复 {"action": "10001" ,"flag":2 , "msg":"错误"}
 ```
 key 名称不一样怎么办？
 ```
 发送 {"method"："10000"}
-设置请求 action key 名称
+设置请求 action key 名称 （Raction 是 0.1.1 新增的属性，原来跟Kaction共用） 
 socket.event.Raction = @"method";
 
 
