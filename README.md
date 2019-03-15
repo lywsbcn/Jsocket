@@ -75,19 +75,19 @@ socket.event.remove(id target);
     连接打开，握手或者登录
     [Jsocket instant].event.ConnectAor(self, ^(Jsocket *jscoket) {
 
-		NSDictionary * loginReq = @{
-			   @"action":@10001,
-			   @"username":@"demo001",
-			   @"password":@"123231"
-			  };
+	NSDictionary * loginReq = @{
+		   @"action":@10001,
+		   @"username":@"demo001",
+		   @"password":@"123231"
+		  };
 
-		发送登录请求
-		[Jsocket instant].send(self,loginReq,^(id response, NSInteger flag, NSString *msg, Jsocket *jscoket) {
-			if(flag == 1){
-				NSLog(@"登录成功")！
-			}else{
-				NSLog(@"登录失败")！
-            }
+	发送登录请求
+	[Jsocket instant].send(self,loginReq,^(id response, NSInteger flag, NSString *msg, Jsocket *jscoket) {
+		if(flag == 1){
+			NSLog(@"登录成功")！
+		}else{
+			NSLog(@"登录失败")！
+            	}
         })；
 
     });
