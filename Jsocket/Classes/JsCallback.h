@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 @class Jsocket;
 /*消息回调*/
-typedef void(^JsBlockMsgCallback)(id response,NSInteger flag,NSString * msg,Jsocket * jscoket);
+typedef void(^JsBlockMsgCallback)(id response,NSInteger flag,NSString * msg,Jsocket * jsocket);
 /*事件回调,1.连接成功 2.连接错误 3.连接关闭*/
-typedef void(^JsBlockEventCallback)(Jsocket * jscoket);
+typedef void(^JsBlockEventCallback)(Jsocket * jsocket);
 
 @interface JSCallbackBase :NSObject
 
