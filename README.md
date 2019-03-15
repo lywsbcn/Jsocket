@@ -11,7 +11,7 @@ Jsocket 可以通过 CocoaPods 获得。要安装它，只需将以下一行添�
 pod 'Jsocket'
 ```
 
-####手动安装
+#### 手动安装
 
 把 `Jsocket/Jsocket/Classes/` 目录下的所有文件 拖入项目中
 
