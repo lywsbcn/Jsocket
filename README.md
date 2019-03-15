@@ -173,7 +173,7 @@ typedef NS_ENUM(NSInteger,JsocketConnPattern) {
 };
 
 重连次数,当重连次数超过该值是,不再连接.
-无限重连 设置值为 0, 默认为0
+设置值为 0 无限重连 , 默认为0
 socket.conn.number= 0;
 
 重连间隔时间（秒）当pattern =JsocketConnPatternLoop 时, 
