@@ -43,17 +43,17 @@ socket.open();
 
 
 连接打开回调
-socket.event.ConnectAor(id target, ^(Jsocket *jscoket) {
+socket.event.ConnectAor(id target, ^(Jsocket *jsocket) {
 
 });
 
 发送并且回调
-socket.send(self, req, ^(id response, NSInteger flag, NSString *msg, Jsocket *jscoket) {
+socket.send(self, req, ^(id response, NSInteger flag, NSString *msg, Jsocket *jsocket) {
 
 });
 
 添加监听回调
-socket.event.ListenerAor(id action, id target, ^(id response, NSInteger flag, NSString *msg, Jsocket *jscoket) {
+socket.event.ListenerAor(id action, id target, ^(id response, NSInteger flag, NSString *msg, Jsocket *jsocket) {
 
 }, BOOL always);
 
@@ -73,7 +73,7 @@ socket.event.remove(id target);
     [Jsocket instant].open();
 
     连接打开，握手或者登录
-    [Jsocket instant].event.ConnectAor(self, ^(Jsocket *jscoket) {
+    [Jsocket instant].event.ConnectAor(self, ^(Jsocket *jsocket) {
 
 	NSDictionary * loginReq = @{
 		   @"action":@10001,
@@ -82,7 +82,7 @@ socket.event.remove(id target);
 		  };
 
 	发送登录请求
-	[Jsocket instant].send(self,loginReq,^(id response, NSInteger flag, NSString *msg, Jsocket *jscoket) {
+	[Jsocket instant].send(self,loginReq,^(id response, NSInteger flag, NSString *msg, Jsocket *jsocket) {
 		if(flag == 1){
 			NSLog(@"登录成功")！
 		}else{
@@ -188,7 +188,7 @@ socket.conn.intervalMax = 60;
 #### 连接成功 回调
 ```
 如果，websocket 已经连接，添加这个回调时，会马上调用一次
-socket.event.ConnectAor(self, ^(Jsocket *jscoket) {
+socket.event.ConnectAor(self, ^(Jsocket *jsocket) {
 });
 
 如果 block 为 nil 时，表示移除回调。实际上等于调用下面的移除
@@ -203,7 +203,7 @@ socket.event.removeConnect(nil);
 #### 连接断开 回调
 ```
 添加 websocket 已经断开连接回调
-socket.event.CloseAor(self, ^(Jsocket *jscoket) {
+socket.event.CloseAor(self, ^(Jsocket *jsocket) {
 });
 
 如果 block 为 nil 时，表示移除回调。实际上等于调用下面的移除
@@ -218,7 +218,7 @@ socket.event.removeClose(nil);
 #### 连接错误 回调
 ```
 添加 websocket 已经连接错误回调
-socket.event.ErrorAor(self, ^(Jsocket *jscoket) {
+socket.event.ErrorAor(self, ^(Jsocket *jsocket) {
 });
 
 如果 block 为 nil 时，表示移除回调。实际上等于调用下面的移除
@@ -250,7 +250,7 @@ socket.event.removeError(nil);
 ```
 发送请求，等待回复成功并调用这个回调，调用完成后删除这个回调
 (注意：block 不要传 nil，否则将会执行删除操作)
-socket.send(self,data,^(id response, NSInteger flag, NSString *msg, Jsocket *jscoket) {
+socket.send(self,data,^(id response, NSInteger flag, NSString *msg, Jsocket *jsocket) {
 })；
 ```
 
@@ -259,7 +259,7 @@ socket.send(self,data,^(id response, NSInteger flag, NSString *msg, Jsocket *jsc
 
 ```
 如果，消息是服务器主动推送下来的，或者我想监听 某个 `action` 值的消息
-socket.event.ListenerAor(@"10000", self, ^(id response, NSInteger flag, NSString *msg, Jsocket *jscoket) {
+socket.event.ListenerAor(@"10000", self, ^(id response, NSInteger flag, NSString *msg, Jsocket *jsocket) {
 }, YES);
 
 (注意：最后一个参数 always 要设置为 YES，否则只会调用一次)
