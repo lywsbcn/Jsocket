@@ -117,12 +117,14 @@ socket.event.remove(id target);
 ```
 key 名称不一样怎么办？
 ```
-发送 {"method"："10000"}
+比如:发送 {"method"："10000"}
+
 设置请求 action key 名称 （Raction 是 0.1.1 新增的属性，原来跟Kaction共用） 
 socket.event.Raction = @"method";
 
 
-回复 {"method": "10000" ,"code":1 , "message":"ok"}
+比如: 回复 {"method": "10000" ,"code":1 , "message":"ok"}
+
 设置回复 action key 名称
 socket.event.Kaction = @"method";
 
