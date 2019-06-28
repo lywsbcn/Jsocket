@@ -239,8 +239,9 @@ static Jsocket * jsocketManager = nil;
         if(jsc.block){
             jsc.block(dic, flag, msg, self);
         }
+        [eventModel removeAllObjects];
+        break;
     }
-    [eventModel removeAllObjects];
     
     if(eventModel && eventModel.count==0){
         [self.event.Callback removeObjectForKey:action];
